@@ -5,150 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Saya</title>
     <style>
-        /* Mengimpor file CSS dari server atau website luar GitHub */
-       @import url(https://dejunk.xtgem.com/Css1/jkt48.css);
+        /* Mengimpor file CSS utama Anda dari server luar */
+        @import url(https://dejunk.xtgem.com/css3/news.css); 
 
+
+        /* STRUKTUR TAMBAHAN UNTUK TAMPILAN LINKTREE (MOBILE-ONLY LOOK) */
+        body {
+            background: #222; /* Warna latar belakang luar pembungkus */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .linktree-layout {
+            width: 100%;
+            max-width: 480px; /* Batas lebar maksimal standar tampilan mobile */
+            background: #333; /* Mengembalikan warna background asli CSS Anda di dalam kotak */
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Efek bayangan di kanan-kiri komputer */
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Menyesuaikan posisi elemen absolute bawaan CSS lama Anda agar tetap di dalam kotak */
+        #top-content {
+            position: absolute !important;
+            max-width: 480px !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin: 0 auto !important;
+        }
     </style>
 </head>
 <body>
 
-    <!-- KONTEN ATAS (Ditempatkan absolute paling atas oleh CSS) -->
-    <div id="top-content">
-        <!-- Menu Navigasi -->
-        <div id="navigation">
-            <span><a href="#">Beranda</a></span>
-            <span><a href="#">Profil</a></span>
-            <span><a href="#">Menu</a></span>
-        </div>
+    <!-- PEMBUNGKUS UTAMA: Memampatkan tampilan menjadi seukuran layar HP -->
+    <div class="linktree-layout">
 
-        <!-- Bagian Header Website -->
-        <div id="header">
-            <h1 class="heading">Nama Blog / Judul Website</h1>
-            <p class="description">Ini adalah deskripsi atau slogan blog Anda yang akan memiliki background gradasi di bawahnya.</p>
-        </div>
-
-        <!-- Form Pencarian -->
-        <form id="search-form" action="#" method="get">
-            <input type="text" placeholder="Cari di sini...">
-            <input type="submit" value="Cari">
-        </form>
-    </div>
-
-    <!-- AREA KONTEN UTAMA (Diberi pembatas atas agar tidak tertutup kontainer absolute) -->
-    <div style="margin-top: 260px;">
-
-        <!-- Artikel / Postingan Pertama -->
-        <div class="post">
-            <div class="post-meta">
-                <h2 class="title"><a href="#">Judul Postingan Pertama</a></h2>
-                <div class="categories">Kategori: <a href="#">Web Design</a></div>
-            </div>
-            <div class="post-content">
-                <img src="https://placeholder.com" class="thumbnail" alt="Thumb">
-                <h3>Sub-Judul Postingan</h3>
-                <p>Ini adalah isi konten atau kutipan artikel Anda. Aturan CSS Anda memberikan dekorasi border dan background khusus di sekeliling teks isi ini.</p>
-                <ul>
-                    <li>Poin daftar di dalam konten 1</li>
-                    <li>Poin daftar di dalam konten 2</li>
-                </ul>
-            </div>
-            <div class="post-meta2">
-                <a href="#">Baca Selengkapnya</a>
-            </div>
-        </div>
-
-        <!-- Tombol Berbagi (Share Buttons) -->
-        <div id="share-buttons">
-            <a href="#"><img src="https://placeholder.com" alt="FB"> Share FB</a>
-            <a href="#"><img src="https://placeholder.com" alt="TW"> Share TW</a>
-        </div>
-
-        <!-- Sistem Navigasi Halaman (Pagination) -->
-        <div id="pagination-links">
-            <span>1</span>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">Selanjutnya &raquo;</a>
-        </div>
-
-        <!-- SIDEBAR ATAU KONTEN BAWAH -->
-        <div id="bottom-content">
-            
-            <!-- Daftar Postingan Terbaru -->
-            <div id="recent-posts-list">
-                <h4></h4> <!-- Diisi otomatis kata "Recent Posts" oleh CSS :before -->
-                <ul>
-                    <li><a href="#">Judul Post Terkini 1</a></li>
-                    <li><a href="#">Judul Post Terkini 2</a></li>
-                    <li class="last"><a href="#">Judul Post Terkini 3</a></li>
-                </ul>
+        <!-- KONTEN ATAS -->
+        <div id="top-content">
+            <!-- Menu Navigasi -->
+            <div id="navigation">
+                <span><a href="#">Beranda</a></span>
+                <span><a href="#">Profil</a></span>
+                <span><a href="#">Menu</a></span>
             </div>
 
-            <!-- Daftar Kategori -->
-            <div id="category-bottom">
-                <h3></h3> <!-- Diisi otomatis kata "Categories" oleh CSS :before -->
-                <ul>
-                    <li><a href="#">HTML</a> Jumlah (5)</li>
-                    <li><a href="#">CSS</a> Jumlah (12)</li>
-                    <li class="last"><a href="#">Javascript</a> Jumlah (3)</li>
-                </ul>
+            <!-- Bagian Header Website -->
+            <div id="header">
+                <h1 class="heading">Nama Blog / Judul Website</h1>
+                <p class="description">Ini adalah deskripsi atau slogan blog Anda yang akan memiliki background gradasi di bawahnya.</p>
             </div>
 
-            <!-- Blogroll / Link Rekomendasi -->
-            <div id="blogroll">
-                <h3></h3> <!-- Diisi otomatis kata "Blogroll" oleh CSS :before -->
-                <ul>
-                    <li><a href="https://github.com">GitHub</a></li>
-                    <li class="last"><a href="#">Situs Sahabat</a></li>
-                </ul>
-            </div>
-
-            <!-- Daftar Mengikuti (Following) -->
-            <div id="following-list">
-                <h4></h4> <!-- Diisi otomatis kata "Following List" oleh CSS :before -->
-                <ul>
-                    <li>User A</li>
-                    <li class="last">User B</li>
-                </ul>
-            </div>
-
-            <!-- Menu Navigasi Tambahan -->
-            <div id="navigation-menu">
-                <h3><a href="#">Menu Utama</a></h3>
-                <ul>
-                    <li><h3>Judul Menu</h3></li>
-                    <li class="last"><h5>Sub Menu</h5></li>
-                </ul>
-            </div>
-
-        <!-- AREA KOMENTAR -->
-        <div id="comments">
-            <h3><a href="#">Komentar (1)</a></h3>
-            <h4>Daftar Komentar Pembaca</h4>
-            
-            <!-- Struktur Komentar Individu -->
-            <div class="comment">
-                <div class="comment-header">
-                    <div class="title">Oleh: Budi Santoso</div>
-                </div>
-                <div class="comment-content">
-                    <p>Desain websitenya sangat klasik dan menarik! Terima kasih panduannya.</p>
-                </div>
-            </div>
-
-            <h5>Kirim Komentar Anda</h5>
-            <!-- Form Komentar -->
-            <form id="comment_form" action="#" method="post">
-                <input type="text" placeholder="Nama Anda"><br>
-                <textarea placeholder="Tulis komentar di sini..."></textarea><br>
-                <input type="submit" value="Kirim Komentar">
+            <!-- Form Pencarian -->
+            <form id="search-form" action="#" method="get">
+                <input type="text" placeholder="Cari di sini...">
+                <input type="submit" value="Cari">
             </form>
         </div>
 
-    <!-- FOOTER WEBSITE -->
-    <div id="footer">
-        <h6>&copy; 2026 Website Saya. All Rights Reserved. Hosted on GitHub Pages.</h6>
-    </div>
+        <!-- AREA KONTEN UTAMA (Diberi jarak atas agar tidak tertutup elemen absolute) -->
+        <div style="padding-top: 260px; padding-bottom: 20px;">
+
+            <!-- Artikel / Postingan Pertama -->
+            <div class="post">
+                <div class="post-meta">
+                    <h2 class="title"><a href="#">Judul Postingan Pertama</a></h2>
+                    <div class="categories">Kategori: <a href="#">Web Design</a></div>
+                </div>
+                <div class="post-content">
+                    <img src="https://placeholder.com" class="thumbnail" alt="Thumb">
+                    <h3>Sub-Judul Postingan</h3>
+                    <p>Ini adalah isi konten atau kutipan artikel Anda. Aturan CSS Anda memberikan dekorasi border dan background khusus di sekeliling teks isi ini.</p>
+                    <ul>
+                        <li>Poin daftar di dalam konten 1</li>
+                        <li>Poin daftar di dalam konten 2</li>
+                    </ul>
+                </div>
+                <div class="post-meta2">
+                    <a href="#">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Tombol Berbagi (Share Buttons) -->
+            <div id="share-buttons">
+                <a href="#"><img src="https://placeholder.com" alt="FB"> Share FB</a>
+                <a href="#"><img src="https://placeholder.com" alt="TW"> Share TW</a>
+            </div>
+
+            <!-- Sistem Navigasi Halaman (Pagination) -->
+            <div id="pagination-links">
+                <span>1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Selanjutnya &raquo;</a>
+            </div>
+
+            <!-- SIDEBAR ATAU KONTEN BAWAH -->
+            <div id="bottom-content">
+                
+                <!-- Daftar Postingan Terbaru -->
+                <div id="recent-posts-list">
+                    <h4></h4>
+                    <ul>
+                        <li><a href="#">Judul Post Terkini 1</a></li>
+                        <li><a href="#">Judul Post Terkini 2</a></li>
+                        <li class="last"><a href="#">Judul Post Terkini 3</a></li>
+                    </ul>
+                </div>
+
+                <!-- Daftar Kategori -->
+                <div id="category-bottom">
+                    <h3></h3>
+                    <ul>
+                        <li><a href="#">HTML</a> Jumlah (5)</li>
+                        <li><a href="#">CSS</a> Jumlah (12)</li>
+                        <li class="last"><a href="#">Javascript</a> Jumlah (3)</li>
+                    </ul>
+                </div>
+
+                <!-- Blogroll / Link Rekomendasi -->
+                <div id="blogroll">
+                    <h3></h3>
+                    <ul>
+                        <li><a href="https://github.com">GitHub</a></li>
+                        <li class="last"><a href="#">Situs Sahabat</a></li>
+                    </ul>
+                </div>
+
+                <!-- Daftar Mengikuti (Following) -->
+                <div id="following-list">
+                    <h4></h4>
+                    <ul>
+                        <li>User A</li>
+                        <li class="last">User B</li>
+                    </ul>
+                </div>
+
+                <!-- Menu Navigasi Tambahan -->
+                <div id="navigation-menu">
+                    <h3><a href="#">Menu Utama</a></h3>
+                    <ul>
+                        <li><h3>Judul Menu</h3></li>
+                        <li class="last"><h5>Sub Menu</h5></li>
+                    </ul>
+                </div>
+
+            <!-- AREA KOMENTAR -->
+            <div id="comments">
+                <h3><a href="#">Komentar (1)</a></h3>
+                <h4>Daftar Komentar Pembaca</h4>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="title">Oleh: Budi Santoso</div>
+                    </div>
+                    <div class="comment-content">
+                        <p>Desain websitenya sangat klasik dan menarik! Terima kasih panduannya.</p>
+                    </div>
+                </div>
+
+                <h5>Kirim Komentar Anda</h5>
+                <form id="comment_form" action="#" method="post">
+                    <input type="text" placeholder="Nama Anda"><br>
+                    <textarea placeholder="Tulis komentar di sini..."></textarea><br>
+                    <input type="submit" value="Kirim Komentar">
+                </form>
+            </div>
+
+        <!-- FOOTER WEBSITE -->
+        <div id="footer">
+            <h6>&copy; 2026 Website Saya. Hosted on GitHub Pages.</h6>
+        </div>
+
+    </div> <!-- AKHIR PEMBUNGKUS LINKTREE -->
 
 </body>
 </html>
